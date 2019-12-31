@@ -71,3 +71,14 @@ testPermutation(" ") // Expect true
 testPermutation("aa") // Expect true
 testPermutation("aba") // Expect true
 testPermutation("abca") // Expect false
+
+// MARK: - Output
+
+//Checking if taco cat is a permutation of a palindrome... true
+//Checking if barbed wire is a permutation of a palindrome... false
+//Checking if  is a permutation of a palindrome... true
+//Checking if   is a permutation of a palindrome... true
+//Checking if aa is a permutation of a palindrome... true
+//Checking if aba is a permutation of a palindrome... true
+//Checking if abca is a permutation of a palindrome... false
+
