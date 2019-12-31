@@ -15,7 +15,10 @@ import Cocoa
 //
 // Source: Laakmann-McDowell, Gayle. Cracking the Coding Interview. 2015. 6th ed.
 
-// MARK: - Implementation
+// MARK: - Solution
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)
 
 // Returns true if the string is a permutation of a palindrome
 func palindromePermutation(_ s: String) -> Bool {
@@ -57,7 +60,7 @@ func hasOnlyOneOddElement(_ f: [Int]) -> Bool {
     return true
 }
 
-// MARK: - Test
+// MARK: - Testing
 
 func testPermutation(_ s: String) {
     let result = palindromePermutation(s)
