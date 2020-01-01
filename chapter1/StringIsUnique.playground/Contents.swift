@@ -37,3 +37,10 @@ func isUnique(_ s: String) -> Bool {
 print(isUnique(""))
 print(isUnique("abcdefghijklmnopqrstuvwxyz"))
 print(isUnique("abcdefghijklmnopqrstuvwxyza"))
+
+// MARK: - Output
+
+//true
+//true
+//false
+
