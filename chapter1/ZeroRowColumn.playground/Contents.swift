@@ -45,6 +45,8 @@ func zeroMatrix(_ M: inout [[Int]]) {
     }
 }
 
+// MARK: - Testing
+
 func printMatrix(_ M: [[Int]]) {
     for i in 0..<M.count {
         let row = M[i]
@@ -72,8 +74,7 @@ func testZeroMatrix(_ M: [[Int]]) {
     print(" ")
 }
 
-// MARK: - Testing
-
+// Test cases
 testZeroMatrix([[1,1,1,1],[1,1,1,1],[1,1,1,1]])
 testZeroMatrix([[1,1,1,1],[1,0,1,1],[1,1,1,1]])
 testZeroMatrix([[0,1,1,1],[1,0,1,1],[1,1,0,1]])
