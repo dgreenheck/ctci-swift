@@ -2,9 +2,9 @@ import Cocoa
 
 // MARK: - Summary
 
-// 2.1 - Remove Dups
+// 2.2 - Return K-th to Last
 //
-// Removes duplicates from an unsorted linked list
+// Return the k-th to last item from a singly linked list.
 //
 // Author: Daniel Greenheck
 //
@@ -28,27 +28,20 @@ class Node {
 // MARK: - Solution
 
 // Time Complexity: O(N)
-// Space Complexity: O(N)
+// Space Complexity: O(1)
 
-func removeDups(_ root: Node) {
-    var node: Node = root
-    var existingValues = Set<Int>([root.value])
-    var previousNode = node
+func returnKthToLast(_ root: Node, _ k: Int) -> Node {
+    var index = 0
+    var offsetNode = root
+    var node = root
     while node.next != nil {
         node = node.next!
-        if existingValues.contains(node.value) {
-            if let nextNode = node.next {
-                previousNode.next = nextNode
-            }
-            else {
-                previousNode.next = nil
-            }
+        if index >= k {
+            offsetNode = offsetNode.next!
         }
-        else {
-            existingValues.insert(node.value)
-            previousNode = node
-        }
+        index += 1
     }
+    return offsetNode
 }
 
 // MARK: - Testing
@@ -77,25 +70,15 @@ func createLinkedListFromArray(_ values: [Int]) -> Node {
     return root
 }
 
-func testRemoveDups(_ values: [Int]) {
-    let root = createLinkedListFromArray(values)
-    removeDups(root)
-    printLinkedList(root)
-}
-
 // Test cases
-testRemoveDups([1,2,3,4,5])
-testRemoveDups([1,2,2,3,4])
-testRemoveDups([1,2,3,2,5])
-testRemoveDups([1,2,3,2,1])
-testRemoveDups([1,1,1,1,1])
-testRemoveDups([1])
+print(returnKthToLast(createLinkedListFromArray([1,2,3,4,5]),0).value)
+print(returnKthToLast(createLinkedListFromArray([1,2,3,4,5]),2).value)
+print(returnKthToLast(createLinkedListFromArray([1,2,3,4,5]),4).value)
+print(returnKthToLast(createLinkedListFromArray([1]),0).value)
 
 // MARK: - Output
 
-//1->2->3->4->5
-//1->2->3->4
-//1->2->3->5
-//1->2->3
+//5
+//3
 //1
 //1
